@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="zh-Hant" data-theme="auto">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>顏端廷 — 個人網站</title>
+  <meta name="description" content="一句話自我介紹（可搜尋的 SEO 描述）。" />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://example.com/" />
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="你的名字" />
+  <meta property="og:title" content="你的名字 — 個人網站" />
+  <meta property="og:description" content="一句話自我介紹（可搜尋的 SEO 描述）。" />
+  <meta property="og:url" content="https://example.com/" />
+  <meta property="og:image" content="https://example.com/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#0b0b12" />
+  <!-- Favicon（自行替換路徑） -->
+  <link rel="icon" href="/favicon.ico" />
+  
+  <!-- 結構化資料：Person（可改） -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "你的名字",
+    "url": "https://example.com/",
+    "sameAs": [
+      "https://github.com/yourname",
+      "https://www.linkedin.com/in/yourname/"
+    ],
+    "jobTitle": "大學生",
+    "affiliation": {"@type": "CollegeOrUniversity", "name": "你的學校"}
+  }
+  </script>
+
+  <style>
+    /* =====================
+       設計系統（可自由客製）
+    ====================== */
+    :root {
+      --bg: #0b0b12;
+      --bg-soft: #111120;
+      --fg: #EDEEF1;
+      --muted: #A6ACB9;
+      --brand: #7C9CFF;
+      --accent: #9AE6B4;
+      --card: #151527;
+      --border: #26273A;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 16px;
+      --maxw: 1050px;
+      --pad: clamp(16px, 1.8vw, 24px);
+      --font-sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Noto Sans", "PingFang TC", "Microsoft JhengHei", "Apple LiGothic", "Heiti TC", sans-serif;
+      --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+    }
+    
+    html[data-theme="light"] {
+      --bg: #ffffff;
+      --bg-soft: #f7f7fb;
+      --fg: #17181c;
+      --muted: #5a6072;
+      --brand: #375DFB;
+      --accent: #0BB489;
+      --card: #ffffff;
+      --border: #e6e7ef;
+      --shadow: 0 10px 25px rgba(16,24,40,.08);
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: var(--font-sans);
+      color: var(--fg);
+      background: radial-gradient(1200px 700px at 80% -10%, rgba(124,156,255,.18), transparent),
+                  radial-gradient(900px 600px at -10% 10%, rgba(10,180,137,.16), transparent),
+                  var(--bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    
+    .container { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 var(--pad); }
+
+    /* ====== 導覽列 ====== */
+    .nav {
+      position: sticky; top: 0; inset-inline: 0; z-index: 50;
+      backdrop-filter: saturate(140%) blur(10px);
+      background: color-mix(in oklab, var(--bg), transparent 25%);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .brand { font-weight: 700; letter-spacing: .3px; }
+    .brand small { opacity:.7; font-weight:500; margin-left:.5rem; font-size:.9rem; }
+    .nav-links { display: flex; gap: 20px; align-items: center; }
+    .nav-links a { opacity:.86; padding: 8px 10px; border-radius: 10px; }
+    .nav-links a:hover, .nav-links a:focus-visible { background: var(--bg-soft); outline: none; }
+    .btn { appearance: none; cursor: pointer; border: 1px solid var(--border); background: var(--card); color: var(--fg); padding: 8px 12px; border-radius: 12px; }
+    .btn:hover { filter: brightness(1.05); }
+
+    /* ====== Hero ====== */
+    .hero { padding: 96px 0 48px; }
+    .hero-grid { display: grid; gap: 28px; grid-template-columns: 1.2fr .8fr; align-items: center; }
+    .hero h1 { font-size: clamp(32px, 6vw, 54px); line-height: 1.12; margin: 0 0 12px; }
+    .hero p { font-size: clamp(16px, 2.2vw, 18px); color: var(--muted); margin: 0 0 24px; }
+    .tag-row { display:flex; flex-wrap: wrap; gap:10px; }
+    .tag { font-size: 12px; letter-spacing:.2px; padding: 6px 10px; border: 1px solid var(--border); border-radius: 999px; background: color-mix(in oklab, var(--card), var(--bg) 25%); }
+    .hero-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px; box-shadow: var(--shadow); }
+    .avatar {
+      width: 120px; height:120px; border-radius: 50%; border: 2px solid var(--border);
+      background:
+        radial-gradient(40px 40px at 35% 35%, rgba(255,255,255,.12), transparent 60%),
+        linear-gradient(135deg, color-mix(in oklab, var(--brand), var(--bg) 45%), color-mix(in oklab, var(--accent), var(--bg) 45%));
+    }
+
+    /* ====== 區塊樣式 ====== */
+    section { padding: 52px 0; }
+    .section-title { display:flex; align-items: center; gap: 10px; margin-bottom: 18px; }
+    .section-title h2 { margin: 0; font-size: clamp(20px, 3vw, 26px); }
+    .section-title .line { flex:1; height:1px; background: var(--border); }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px; box-shadow: var(--shadow); }
+
+    /* ====== Projects Grid ====== */
+    .grid { display: grid; gap: 16px; grid-template-columns: repeat(3, minmax(0,1fr)); }
+    .project { display:flex; flex-direction: column; }
+    .project h3 { margin: 0 0 6px; font-size: 18px; }
+    .project p { margin: 0 0 12px; color: var(--muted); font-size: 14px; }
+    .meta { display:flex; gap:10px; flex-wrap:wrap; margin-top:auto; }
+    .meta .chip { font-size:12px; padding: 4px 8px; border-radius:8px; background: var(--bg-soft); border: 1px solid var(--border); }
+
+    /* ====== Writing ====== */
+    .list { display:grid; gap: 12px; }
+    .list a { display:flex; align-items:center; justify-content: space-between; padding: 14px; border:1px solid var(--border); border-radius: 12px; background: var(--card); }
+    .list a:hover { transform: translateY(-1px); }
+    .list .title { font-weight:600; }
+    .list .date { color: var(--muted); font-variant-numeric: tabular-nums; }
+
+    /* ====== Footer ====== */
+    footer { padding: 48px 0 64px; color: var(--muted); border-top: 1px solid var(--border); }
+
+    /* ====== 響應式 ====== */
+    @media (max-width: 920px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    }
+    @media (max-width: 640px) {
+      .nav-inner { height: 56px; }
+      .grid { grid-template-columns: 1fr; }
+      .nav-links { display:none; }
+      .nav .menu-btn { display: inline-flex; }
+      .mobile-menu { display: none; position: fixed; inset: 64px var(--pad) auto var(--pad); background: var(--card); border:1px solid var(--border); border-radius: 12px; box-shadow: var(--shadow); padding: 12px; }
+      .mobile-menu a { display:block; padding: 10px 12px; border-radius: 8px; }
+      .mobile-menu a:hover { background: var(--bg-soft); }
+      .mobile-menu.open { display:block; }
+    }
+
+    /* ====== 動畫（偏好減少動畫則停用） ====== */
+    @media (prefers-reduced-motion: no-preference) {
+      .reveal { opacity: 0; transform: translateY(8px); transition: .5s ease; }
+      .reveal.show { opacity: 1; transform: none; }
+    }
+
+    /* 可存放語法高亮或自定義區塊（略） */
+  </style>
+</head>
+<body>
+  <!-- ====== 導覽列 ====== -->
+  <nav class="nav" aria-label="主選單">
+    <div class="container nav-inner">
+      <div class="brand"><a href="#home">顏端廷</a> <small>Portfolio</small></div>
+      <div class="nav-links" role="menubar">
+        <a role="menuitem" href="#about">關於</a>
+        <a role="menuitem" href="#projects">作品</a>
+        <a role="menuitem" href="#writing">文章</a>
+        <a role="menuitem" href="#resume">履歷</a>
+        <a role="menuitem" href="#contact">聯絡</a>
+        <button class="btn" id="themeToggle" aria-label="切換深淺色">切換主題</button>
+      </div>
+      <button class="btn menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu" style="display:none">選單</button>
+    </div>
+    <div class="container">
+      <div id="mobileMenu" class="mobile-menu" role="menu">
+        <a role="menuitem" href="#about" onclick="closeMenu()">關於</a>
+        <a role="menuitem" href="#projects" onclick="closeMenu()">作品</a>
+        <a role="menuitem" href="#writing" onclick="closeMenu()">文章</a>
+        <a role="menuitem" href="#resume" onclick="closeMenu()">履歷</a>
+        <a role="menuitem" href="#contact" onclick="closeMenu()">聯絡</a>
+        <a role="menuitem" href="#home" onclick="closeMenu()">回到頂部</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ====== Hero ====== -->
+  <header id="home" class="hero container">
+    <div class="hero-grid">
+      <div>
+        <div class="tag-row" aria-label="標籤">
+          <span class="tag">python / C/C++ / MySQL</span>
+          <span class="tag">Data Science Learner</span>
+          <span class="tag">閱讀愛好者</span>
+          <span class="tag">哲學愛好者</span>
+        </div>
+        <h1>嗨，我是<strong>顏端廷</strong>。<br/>。</h1>
+        <p>一句更完整的自我介紹：你善於的領域、目前在做的事、你想解決的問題或價值觀。保留 2~3 句，讓讀者知道你是誰、在找什麼。</p>
+        <div style="display:flex; gap:10px; flex-wrap:wrap">
+          <a class="btn" href="#projects" aria-label="查看作品">查看作品</a>
+          <a class="btn" href="#contact" aria-label="聯絡我">聯絡我</a>
+          <a class="btn" href="https://github.com/potato-yen" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/in/amethus-yen/" target="_blank" rel="noopener" aria-label="GitHub">LinkedIn</a>
+        </div>
+      </div>
+      <div class="hero-card reveal" aria-label="個人簡介">
+        <div style="display:flex; gap:16px; align-items:center;">
+          <div class="avatar" aria-label="頭像佔位"></div>
+          <div>
+            <div style="font-weight:700">顏端廷</div>
+            <div style="color:var(--muted); font-size:14px">大學生 / 台灣</div>
+          </div>
+        </div>
+        <div style="height:12px"></div>
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px;">
+          <div class="card" style="padding:12px">
+            <div style="font-size:12px; color:var(--muted)">正在學習</div>
+            <div>機器學習、</div>
+          </div>
+          <div class="card" style="padding:12px">
+            <div style="font-size:12px; color:var(--muted)">目標</div>
+            <div>實習機會 / Side Project 合作</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ====== 關於 ====== -->
+  <section id="about" class="container reveal">
+    <div class="section-title"><h2>關於我</h2><div class="line"></div></div>
+    <div class="card">
+      <p>這裡放一段 3~6 句的自我介紹：背景、擅長、興趣、目前研究主題。保持具體（例如「用 Python+pandas 做資料清洗與可視化」、「以 C 語言理解記憶體模型」）。</p>
+      <p>也可以放一列技能：</p>
+      <div class="tag-row">
+        <span class="tag">Python</span><span class="tag">NumPy / pandas</span><span class="tag">C / C++</span><span class="tag">Git / GitHub</span><span class="tag">HTML / CSS / JS</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== 作品 ====== -->
+  <section id="projects" class="container reveal">
+    <div class="section-title"><h2>精選作品</h2><div class="line"></div></div>
+    <div class="grid">
+      <!-- 卡片 1 -->
+      <article class="card project">
+        <h3>精選一</h3>
+        <p>待定</p>
+        <div class="meta">
+          <span class="chip">Python</span>
+          <span class="chip">pandas</span>
+          <a class="chip" href="#" target="_blank" rel="noopener">GitHub</a>
+          <a class="chip" href="#" target="_blank" rel="noopener">Demo</a>
+        </div>
+      </article>
+      <!-- 卡片 2 -->
+      <article class="card project">
+        <h3>精選二</h3>
+        <p>待定</p>
+        <div class="meta">
+          <span class="chip">Python</span>
+          <span class="chip">BeautifulSoup</span>
+          <a class="chip" href="#" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </article>
+      <!-- 卡片 3 -->
+      <article class="card project">
+        <h3>精選三</h3>
+        <p>待定</p>
+        <div class="meta">
+          <span class="chip">JavaScript</span>
+          <span class="chip">Algorithms</span>
+          <a class="chip" href="#" target="_blank" rel="noopener">Demo</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ====== 文章 ====== -->
+  <section id="writing" class="container reveal">
+    <div class="section-title"><h2>最新文章</h2><div class="line"></div></div>
+    <div class="list">
+      <a class="card" href="#" target="_blank" rel="noopener">
+        <span class="title">用 pandas 清洗雜亂資料的 7 個步驟</span>
+        <span class="date">2025-08-10</span>
+      </a>
+      <a class="card" href="#" target="_blank" rel="noopener">
+        <span class="title">C 語言記憶體模型：指標與位移</span>
+        <span class="date">2025-07-28</span>
+      </a>
+      <a class="card" href="#" target="_blank" rel="noopener">
+        <span class="title">從 0 建立可維護的爬蟲專案結構</span>
+        <span class="date">2025-06-30</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ====== 履歷 ====== -->
+  <section id="resume" class="container reveal">
+    <div class="section-title"><h2>履歷摘要</h2><div class="line"></div></div>
+    <div class="card">
+      <h3 style="margin:0 0 10px">教育</h3>
+      <ul>
+        <li>國立台灣師範大學 — 科技應用與人力資源發展學系 / 資訊工程系 (2024-2028)</li>
+      </ul>
+      <h3 style="margin:16px 0 10px">經驗</h3>
+      <ul>
+        <li>待定</li>
+      </ul>
+      <h3 style="margin:16px 0 10px">技能</h3>
+      <ul>
+        <li>待定</li>
+      </ul>
+      <div style="margin-top:12px">
+        <a class="btn" href="/cv.pdf" target="_blank" rel="noopener">下載完整履歷（PDF）</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== 聯絡 ====== -->
+  <section id="contact" class="container reveal">
+    <div class="section-title"><h2>聯絡</h2><div class="line"></div></div>
+    <div class="card" style="display:grid; gap:14px;">
+      <p>歡迎來信或私訊社群媒體。若你偏好表單，也可直接送出。</p>
+      <div style="display:flex; gap:10px; flex-wrap:wrap">
+        <a class="btn" id="copyEmail" href="mailto:yourname@mail.example" aria-label="寄信給我">yourname@mail.example</a>
+        <a class="btn" href="https://www.linkedin.com/in/yourname/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+        <a class="btn" href="https://github.com/yourname" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+      </div>
+      <form id="contactForm" action="https://formspree.io/f/your-id" method="POST" style="display:grid; gap:10px" aria-label="聯絡表單">
+        <!--
+          若你不想用第三方，可移除 action，改用 mailto: 或部署到 Netlify/Cloudflare Pages 後使用其表單功能。
+        -->
+        <input class="card" style="padding:10px" type="text" name="name" placeholder="你的名字" required>
+        <input class="card" style="padding:10px" type="email" name="email" placeholder="你的 Email" required>
+        <textarea class="card" style="padding:10px; min-height:120px" name="message" placeholder="想聊的主題..." required></textarea>
+        <button class="btn" type="submit">送出</button>
+        <div id="formMsg" style="font-size:14px; color:var(--muted)"></div>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container" style="display:flex; justify-content: space-between; align-items:center; gap:10px; flex-wrap:wrap">
+      <div>© <span id="year"></span> 你的名字。保留所有權利。</div>
+      <div style="font-size:14px">以原生 HTML/CSS/JS 製作 · 無框架 · 可離線瀏覽</div>
+    </div>
+  </footer>
+
+  <script>
+    // ====== 年度
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // ====== 主題切換（localStorage + prefers-color-scheme）
+    (function initTheme(){
+      const saved = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = saved || (prefersDark ? 'dark' : 'light');
+      if (theme === 'dark') document.documentElement.setAttribute('data-theme','dark');
+      if (theme === 'light') document.documentElement.setAttribute('data-theme','light');
+    })();
+
+    document.getElementById('themeToggle').addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    });
+
+    // ====== 手機選單
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    function closeMenu(){ mobileMenu.classList.remove('open'); menuBtn.setAttribute('aria-expanded','false'); }
+    window.closeMenu = closeMenu;
+    menuBtn.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', String(open));
+    });
+
+    // ====== Reveal on scroll（使用 IntersectionObserver）
+    const io = ('IntersectionObserver' in window) ? new IntersectionObserver((entries) => {
+      for (const e of entries) if (e.isIntersecting) { e.target.classList.add('show'); io.unobserve(e.target); }
+    }, { threshold: 0.08 }) : null;
+    if (io) document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // ====== 複製 Email
+    document.getElementById('copyEmail').addEventListener('click', (e) => {
+      const email = 'yourname@mail.example';
+      if (navigator.clipboard && !e.metaKey && !e.ctrlKey) {
+        e.preventDefault();
+        navigator.clipboard.writeText(email).then(() => {
+          alert('Email 已複製：' + email);
+        });
+      }
+    });
+
+    // ====== 表單送出回饋（若使用 Formspree/Netlify）
+    const form = document.getElementById('contactForm');
+    const formMsg = document.getElementById('formMsg');
+    if (form && form.action && form.action.startsWith('https://')) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        formMsg.textContent = '傳送中...';
+        try {
+          const fd = new FormData(form);
+          const res = await fetch(form.action, { method: 'POST', body: fd, headers: { 'Accept': 'application/json' }});
+          if (res.ok) { form.reset(); formMsg.textContent = '已送出，謝謝！'; }
+          else { formMsg.textContent = '送出失敗，請稍後再試。'; }
+        } catch (err) { formMsg.textContent = '網路異常，請稍後再試。'; }
+      });
+    }
+
+    // ====== 無障礙：鍵盤導覽焦點可見
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Tab') document.documentElement.classList.add('show-focus');
+    });
+  </script>
+
+  <style>
+    /* 顯示鍵盤焦點 */
+    .show-focus :focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; border-radius: 10px; }
+  </style>
+
+  <!--
+  ===================== 快速客製指南 =====================
+  1) 直接用 VS Code 開啟這個檔案，修改「你的名字」、「描述」、「連結」等。
+  2) 換上你的 favicon 與 og-image（/favicon.ico, /og-image.png）。
+  3) Projects/Writing 區塊：複製卡片即可新增，保持語句精煉。
+  4) 履歷：把 /cv.pdf 放在同層目錄，或改為你的雲端連結。
+  5) 部署：
+     - 本地預覽：在終端執行 `python -m http.server 8080` 後開啟 http://localhost:8080
+     - GitHub Pages：建立 repo，上傳 index.html，於 Settings → Pages 啟用。
+     - Cloudflare Pages/Netlify：直接拖拉專案資料夾。
+  6) 進階：
+     - 若你想分離 CSS/JS，可建立 /assets/styles.css 與 /assets/app.js，並以 <link>/<script src> 引用。
+     - 想要中英雙語，可用 JS 讀取 i18n JSON 切換文字（此模板保持簡潔未內建）。
+  ========================================================
+  -->
+</body>
+</html>
