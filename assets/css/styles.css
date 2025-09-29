@@ -126,3 +126,20 @@ iframe { border-radius: 12px; background: var(--bg-soft); }
     height: 800px; /* 手機給它多一點高度避免要滑兩次 */
   }
 }
+
+.form-wrapper {
+  display: flex;
+  justify-content: center;   /* 水平置中 */
+  align-items: center;       /* 垂直置中（可選）*/
+  padding: 20px;
+}
+
+.google-form {
+  width: 100%;
+  max-width: 700px;          /* 限制最大寬度，避免在桌機太寬 */
+  height: 600px;             /* 可以依你的表單內容調整 */
+  border: none;
+  border-radius: 16px;
+  background: var(--card);
+  box-shadow: var(--shadow);
+}
