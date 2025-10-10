@@ -1,10 +1,5 @@
-// AItest.tsx  — OpenAI 版（前端 fetch）
-// 重點：保留 UI / 狀態與互動；以 fetch 呼叫 OpenAI /v1/chat/completions
-// 預設模型：gpt-5；localStorage key：openai_api_key
-
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 
-// 與你原本一致的簡化型別（保留以避免大改 UI）
 export type Part = { text: string };
 export type ChatMsg = { role: 'user' | 'model'; parts: Part[] };
 
@@ -64,6 +59,7 @@ export default function AItest({
     setError('');
     setLoading(true);
 
+    // 手動設定context window
     const newHistory: ChatMsg[] = [...history, { role: 'user', parts: [{ text: content }] }];
     setHistory(newHistory);
     setInput('');
@@ -80,7 +76,6 @@ export default function AItest({
         body: JSON.stringify({
           model,
           messages,
-          // 可依需求加入：temperature, top_p, max_tokens, presence_penalty, frequency_penalty...
         }),
       });
 
@@ -222,6 +217,9 @@ const styles: Record<string, React.CSSProperties> = {
     border: '1px solid #e5e7eb',
     borderRadius: 16,
     overflow: 'hidden',
+    display: 'flex',
+    flexDirection: 'column',
+    height: '90vh',
   },
   header: {
     padding: '10px 12px',
@@ -235,16 +233,26 @@ const styles: Record<string, React.CSSProperties> = {
     gridTemplateColumns: '1fr 1fr',
     padding: 12,
   },
+  // 讓輸入框永遠在網頁底下
+  composer: {
+  position: 'sticky',
+  bottom: 0,
+  background: '#fff',
+  padding: 12,
+  display: 'grid',
+  gridTemplateColumns: '1fr auto',
+  gap: 8,
+  borderTop: '1px solid #e5e7eb',
+},
   label: { display: 'grid', gap: 6, fontSize: 13, fontWeight: 600 },
   input: { padding: '10px 12px', borderRadius: 10, border: '1px solid #e5e7eb', fontSize: 14 },
-  messages: { padding: 12, display: 'grid', gap: 10, maxHeight: 420, overflow: 'auto' },
+  messages: { padding: 12, display: 'grid', gap: 10, maxHeight: 420, overflow: 'auto', flex: 1, overflowY: 'auto', },
   msg: { borderRadius: 12, padding: 10, border: '1px solid #e5e7eb' },
   user: { background: '#eef2ff', borderColor: '#c7d2fe' },
   assistant: { background: '#f1f5f9', borderColor: '#e2e8f0' },
   msgRole: { fontSize: 12, fontWeight: 700, opacity: 0.7, marginBottom: 6 },
   msgBody: { fontSize: 14, lineHeight: 1.5 },
   error: { color: '#b91c1c', padding: '4px 12px' },
-  composer: { padding: 12, display: 'grid', gridTemplateColumns: '1fr auto', gap: 8, borderTop: '1px solid #e5e7eb' },
   textInput: { padding: '10px 12px', borderRadius: 10, border: '1px solid #e5e7eb', fontSize: 14 },
   sendBtn: { padding: '10px 14px', borderRadius: 999, border: '1px solid #111827', background: '#111827', color: '#fff', fontSize: 14, cursor: 'pointer' },
   suggestion: { padding: '6px 10px', borderRadius: 999, border: '1px solid #e5e7eb', background: '#f9fafb', cursor: 'pointer', fontSize: 12 },
