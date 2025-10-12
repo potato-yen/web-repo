@@ -6,6 +6,6 @@
 - HW1 : Self page 
     - [My page](https://potato-yen.github.io/web-repo)
 - HW2 : Curl & API
-    - Demo video
+    - [Demo video](https://youtu.be/Tw2IFHEJEIM?si=h6fPD2EDV5ckWBnH)
     - [Modified review](https://github.com/potato-yen/web-repo/blob/main/my-app/modified_review.md)
-    - [Modified detail](https://github.com/potato-yen/web-repo/blob/main/my-app/app/(tabs)/AItest.tsx)
+    - [Modified detail - AItest](https://github.com/potato-yen/web-repo/blob/main/my-app/app/(tabs)/AItest.tsx)
