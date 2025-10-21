@@ -11,3 +11,4 @@
     - [Modified detail - AItest](https://github.com/potato-yen/web-repo/blob/main/my-app/app/(tabs)/AItest.tsx)
 - HW3 : Add api into self page
     - [Demo video](https://youtu.be/zK-klYpHZXQ)
+    - [Repository](https://github.com/potato-yen/web-repo2)
