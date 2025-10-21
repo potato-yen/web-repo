@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="zh-Hant" data-theme="auto">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>顏端廷 — 個人網站</title>
+  <meta name="description" content="一句話自我介紹（可搜尋的 SEO 描述）。" />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://example.com/" />
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="顏端廷" />
+  <meta property="og:title" content="顏端廷 — 個人網站" />
+  <meta property="og:description" content="一句話自我介紹（可搜尋的 SEO 描述）。" />
+  <meta property="og:url" content="https://example.com/" />
+  <meta property="og:image" content="assets/img/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#0b0b12" />
+  <link rel="icon" href="assets/img/favicon.ico" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <script defer src="assets/js/app.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "顏端廷",
+    "url": "https://example.com/",
+    "sameAs": [
+      "https://github.com/potato-yen",
+      "https://www.linkedin.com/in/amethus-yen/"
+    ],
+    "jobTitle": "大學生",
+    "affiliation": {"@type": "CollegeOrUniversity", "name": "國立台灣師範大學"}
+  }
+  </script>
+</head>
+<body>
+  <!-- 頂部卷軸進度條 -->
+  <div id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- 導覽列（僅品牌與主題切換） -->
+  <nav class="nav" aria-label="主選單">
+    <div class="container nav-inner">
+      <div class="brand"><a href="#home">顏端廷</a> <small>Portfolio</small></div>
+      <div class="nav-right">
+        <div class="nav-links" role="menubar">
+          <a role="menuitem" href="#about">關於</a>
+          <a role="menuitem" href="#projects">作品</a>
+          <a role="menuitem" href="#writing">文章</a>
+          <a role="menuitem" href="#resume">履歷</a>
+          <a role="menuitem" href="#contact">聯絡</a>
+          <a role="menuitem" href="#ai-chat">AI chat</a>
+        </div>
+        <button class="btn" id="themeToggle" aria-label="切換深淺色">切換主題</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header id="home" class="hero container">
+    <div class="hero-grid">
+      <div>
+        <div class="tag-row" aria-label="標籤">
+          <span class="tag">Python</span>
+          <span class="tag">C/C++</span>
+          <span class="tag">MySQL</span>
+          <span class="tag">Data Science</span>
+          <span class="tag">Eastern philosophy</span>
+        </div>
+        <h1>你好，我是<strong>顏端廷</strong><br/>專注於探索與提升</h1>
+        <p>一個期望成為 Data scientist / AI/ML engineer 的學生<br>
+          熱衷於學習各項前沿AI技術
+        </p>
+        <div class="hero-ctas">
+          <a class="btn" href="#projects" aria-label="查看作品">查看作品</a>
+          <a class="btn" href="#contact" aria-label="聯絡我">聯絡我</a>
+          <a class="btn" href="https://github.com/potato-yen" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/in/amethus-yen/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+        </div>
+      </div>
+      <div class="hero-card reveal" aria-label="個人簡介">
+        <div class="hero-card-top">
+          <div class="avatar" aria-label="頭像佔位"></div>
+          <div>
+            <div class="name">顏端廷</div>
+            <div class="muted small">Taiwan • Taipei • NTNU</div>
+          </div>
+        </div>
+        <div class="kv-cards">
+          <div class="card small">
+            <div class="muted tiny">正在學習</div>
+            <div>資料結構 / 線性代數 /<br> 機率論 / 機器學習</div>
+          </div>
+          <div class="card small">
+            <div class="muted tiny">目標</div>
+            <div>In 2025<br>-> Leetcode easy : 200 <br>-> Leetcode med : 60</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- 關於 -->
+  <section id="about" class="container reveal">
+    <div class="section-title"><h2>關於我</h2><div class="line"></div></div>
+    <div class="card">
+      <p>我是一名對資料科學、機器學習和軟體工程充滿熱忱的大學生。
+        目前主要用 Python、C/C++ 建構小工具，
+        最近完成了自動化新聞推送專案，整合爬蟲與 OpenAI API 生成每日摘要。
+        近期專注於練習資料結構與 LeetCode 題目，培養演算法思維。
+        我期望未來能投入資料科學或機器學習工程領域，開發結合數據與自動化的解決方案。
+      </p>
+      <p>開發技能：</p>
+      <div class="tag-row">
+        <span class="tag">Python</span>
+        <span class="tag">NumPy / pandas</span>
+        <span class="tag">C / C++</span>
+        <span class="tag">Git / GitHub</span>
+        <span class="tag">Vibe Coding</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 作品 -->
+  <section id="projects" class="container reveal">
+    <div class="section-title"><h2>精選作品</h2><div class="line"></div></div>
+    <div class="grid">
+      <article class="card project tilt">
+        <h3><a href="https://github.com/potato-yen/Daily-News-Email-Digest" target="_blank" rel="noopener">Daily News Email Digest</a></h3>
+        <p>藉由爬蟲進行每日新聞爬取，並串接OpenAI的API，對爬取內容進行摘要，形成一份可供快速預覽的文檔，並傳送至email</p>
+        <div class="meta">
+          <span class="chip">Python</span>
+          <span class="chip">Crawler</span>
+          <a class="chip" href="#" target="_blank" rel="noopener">API Key</a>
+          <a class="chip" href="#" target="_blank" rel="noopener">Auto</a>
+        </div>
+      </article>
+      <article class="card project tilt">
+        <h3><a href="https://github.com/potato-yen/web-repo" target="_blank" rel="noopener">Self Web Page</a></h3>
+        <p>藉由Vibe Coding 做出由 HTML / JS / CSS 建構的個人網站</p>
+        <div class="meta">
+          <span class="chip">Vibe Coding</span>
+          <span class="chip">HTML</span>
+          <span class="chip">CSS</span>
+          <a class="chip" href="#" target="_blank" rel="noopener">JS</a>
+        </div>
+      </article>
+      <article class="card project tilt">
+        <h3>更多精選</h3>
+        <p>後續不定期更新......</p>
+        <div class="meta">
+          <span class="chip">_</span>
+          <span class="chip">_</span>
+          <span class="chip">_</span>
+          <a class="chip" href="#" target="_blank" rel="noopener">_</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 文章 -->
+  <section id="writing" class="container reveal">
+    <div class="section-title"><h2>最新文章</h2><div class="line"></div></div>
+    <div class="list">
+      <a class="card" href="https://github.com/potato-yen/Daily-News-Email-Digest" target="_blank" rel="noopener">
+        <span class="title">Finsh the project "Daily News Email Digest"</span>
+        <span class="date">2025-09-24</span>
+      </a>
+      <a class="card" href="https://leetcode.com/u/potatoyen/" target="_blank" rel="noopener">
+        <span class="title">Qonquer the first one Leetcode medium problem </span>
+        <span class="date">2025-09-23</span>
+      </a>
+      <a class="card" href="https://drive.google.com/file/d/1Osgrxvp08VkvKrZ5uKweVvIewFhFXxCL/view?usp=drivesdk" target="_blank" rel="noopener">
+        <span class="title">Gain the Certificate of Completion Google Cloud</span>
+        <span class="date">2025-08-28</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- 履歷 -->
+  <section id="resume" class="container reveal">
+    <div class="section-title"><h2>履歷摘要</h2><div class="line"></div></div>
+    <div class="card">
+      <h3 class="h3">教育</h3>
+      <ul>
+        <li>國立台灣師範大學 — 科技應用與人力資源發展學系 / 資訊工程學系 (2024–2028)</li>
+      </ul>
+      <h3 class="h3">經驗</h3>
+      <ul>
+        <li>曾任高中社團副社長，並實現社團有序管理</li>
+        <li>獨立使用python完成自動化新聞推送專案</li>
+        <li>完成Google 數位人才探索計畫 Google Cloud學程並獲得認證</li>
+      </ul>
+      <h3 class="h3">技能</h3>
+      <ul>
+        <li>Python / C / C++ / MySQL / Git / Vibe Coding</li>
+        <li>團隊管理 / 組織溝通</li>
+      </ul>
+      <!-- <div class="cta-row">
+        <a class="btn" href="cv.pdf" target="_blank" rel="noopener">下載完整履歷（PDF）</a>
+      </div> -->
+    </div>
+  </section>
+
+  <!-- 聯絡 -->
+  <section id="contact" class="container reveal">
+    <div class="section-title"><h2>聯絡</h2><div class="line"></div></div>
+    <div class="card contact-card">
+      <p>歡迎來信或私訊社群媒體。亦可使用以下嵌入式表單</p>
+      <div class="contact-links">
+        <a class="btn" id="copyEmail" href="mailto:yourname@mail.example" aria-label="寄信給我">amethusyen@gmail.com</a>
+        <a class="btn" href="https://www.linkedin.com/in/amethus-yen/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+        <a class="btn" href="https://github.com/potato-yen" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+      </div>
+      <!-- <form id="contactForm" action="https://formspree.io/f/xwprlwjv" method="POST" class="contact-form" aria-label="聯絡表單">
+        <input class="card input" type="text" name="name" placeholder="你的名字" required>
+        <input class="card input" type="email" name="email" placeholder="你的 Email" required>
+        <textarea class="card input" name="message" placeholder="想聊的主題..." required></textarea>
+        <button class="btn" type="submit">送出</button>
+        <div id="formMsg" class="form-msg muted small"></div>
+      </form>
+    </div> -->
+    <div class="form-wrapper">
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeu4MumZd_NdHXPCIpZaCmGfqqtdmlL4u5n8hhbfv4qdsuqvg/viewform?embedded=true" 
+            class="google-form"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section id="ai-chat" class="container reveal">
+    <div id="root"></div>
+  </section>
+
+  <footer>
+    <div class="container footer-row">
+      <div>© <span id="year"></span> 顏端廷。保留所有權利。</div>
+      <div class="small muted">以原生 HTML/CSS/JS 製作 · 無框架 · 可離線瀏覽</div>
+    </div>
+  </footer>
+  <!-- 右下角回到頂部按鈕 -->
+  <button id="backToTop" class="back-to-top" aria-label="回到頂部" title="回到頂部">
+    <img src="assets/icons/arrow-up.svg" alt="" width="24" height="24" aria-hidden="true" />
+  </button>
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <!-- <script type="text/babel" src="./AItest.js"></script>
+  <script type="text/babel">
+    const root = ReactDOM.createRoot(document.getElementById('react-root'));
+    root.render(<AItest />);
+  </script> -->
+</body>
+</html>
