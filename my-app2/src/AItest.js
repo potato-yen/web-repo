@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 
 export default function AItest({
   defaultModel = 'gpt-5',
-  starter = '嗨！幫我測試一下台北旅遊的一日行程～',
+  starter = '嗨！幫我生成白酒蛤蠣義大利麵的詳細食譜',
 }) {
   const [model, setModel] = useState(defaultModel);
   const [history, setHistory] = useState([]);
@@ -286,7 +286,7 @@ export default function AItest({
 
         {/* Quick examples */}
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginTop: 8 }}>
-          {['今天台北有什麼免費展覽？', '幫我把這段英文翻成中文：Hello from Taipei!', '寫一首關於捷運的短詩'].map(q => (
+          {['光速是怎麼定義的？', '幫我把這段英文翻成法文：Hello my friend!', '寫一個給初學者學習C++的學習計劃'].map(q => (
             <button key={q} type="button" style={styles.suggestion} onClick={() => sendMessage(q)}>
               {q}
             </button>
