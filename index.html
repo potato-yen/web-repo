@@ -1,241 +1,210 @@
-<!doctype html>
-<html lang="zh-Hant" data-theme="auto">
+<!DOCTYPE html>
+<html lang="zh-Hant">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>顏端廷 — 個人網站</title>
-  <meta name="description" content="一句話自我介紹（可搜尋的 SEO 描述）。" />
-  <meta name="robots" content="index,follow" />
-  <link rel="canonical" href="https://example.com/" />
-  <!-- Open Graph / Twitter -->
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="顏端廷" />
-  <meta property="og:title" content="顏端廷 — 個人網站" />
-  <meta property="og:description" content="一句話自我介紹（可搜尋的 SEO 描述）。" />
-  <meta property="og:url" content="https://example.com/" />
-  <meta property="og:image" content="assets/img/og-image.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="theme-color" content="#0b0b12" />
-  <link rel="icon" href="assets/img/favicon.ico" />
-  <link rel="stylesheet" href="assets/css/styles.css" />
-  <script defer src="assets/js/app.js"></script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "顏端廷",
-    "url": "https://example.com/",
-    "sameAs": [
-      "https://github.com/potato-yen",
-      "https://www.linkedin.com/in/amethus-yen/"
-    ],
-    "jobTitle": "大學生",
-    "affiliation": {"@type": "CollegeOrUniversity", "name": "國立台灣師範大學"}
-  }
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>顏端廷 Amethus Yen — Portfolio</title>
+    <meta name="description" content="顏端廷的個人作品集，專注於資料科學與 AI 工程。">
+    
+    <link rel="stylesheet" href="assets/css/styles.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@400;700&family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- 頂部卷軸進度條 -->
-  <div id="scrollProgress" aria-hidden="true"></div>
 
-  <!-- 導覽列（僅品牌與主題切換） -->
-  <nav class="nav" aria-label="主選單">
-    <div class="container nav-inner">
-      <div class="brand"><a href="#home">顏端廷</a> <small>Portfolio</small></div>
-      <div class="nav-right">
-        <div class="nav-links" role="menubar">
-          <a role="menuitem" href="#about">關於</a>
-          <a role="menuitem" href="#projects">作品</a>
-          <a role="menuitem" href="#writing">文章</a>
-          <a role="menuitem" href="#resume">履歷</a>
-          <a role="menuitem" href="#contact">聯絡</a>
+    <nav class="nav">
+        <div class="container nav-inner">
+            <a href="#" class="logo">Amethus Yen.</a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#resume">Resume</a>
+                <a href="#contact">Contact</a>
+            </div>
         </div>
-        <button class="btn" id="themeToggle" aria-label="切換深淺色">切換主題</button>
-      </div>
-    </div>
-  </nav>
+    </nav>
 
-  <!-- Hero -->
-  <header id="home" class="hero container">
-    <div class="hero-grid">
-      <div>
-        <div class="tag-row" aria-label="標籤">
-          <span class="tag">Python</span>
-          <span class="tag">C/C++</span>
-          <span class="tag">MySQL</span>
-          <span class="tag">Data Science</span>
-          <span class="tag">Eastern philosophy</span>
+    <header class="hero container">
+        <div class="hero-content">
+            <div class="profile-wrapper reveal">
+                <img src="assets/img/IMG_5331.JPEG" alt="顏端廷" class="profile-img">
+            </div>
+            <h1 class="hero-title reveal-delay-1">Data Scientist & <br><em>AI/ML Engineer Learner</em></h1>
+            <p class="hero-subtitle reveal-delay-2">
+                你好，我是<strong>顏端廷</strong>。<br>
+                熱衷於在數據的海洋中，尋找邏輯與美感的平衡。
+            </p>
         </div>
-        <h1>你好，我是<strong>顏端廷</strong><br/>專注於探索與提升</h1>
-        <p>一個期望成為 Data scientist / AI/ML engineer 的學生<br>
-          熱衷於學習各項前沿AI技術
-        </p>
-        <div class="hero-ctas">
-          <a class="btn" href="#projects" aria-label="查看作品">查看作品</a>
-          <a class="btn" href="#contact" aria-label="聯絡我">聯絡我</a>
-          <a class="btn" href="https://github.com/potato-yen" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
-          <a class="btn" href="https://www.linkedin.com/in/amethus-yen/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+    </header>
+
+    <section id="about" class="container section">
+        <div class="section-header reveal">
+            <h2 class="section-title">Overview</h2>
+            <div class="section-line"></div>
         </div>
-      </div>
-      <div class="hero-card reveal" aria-label="個人簡介">
-        <div class="hero-card-top">
-          <div class="avatar" aria-label="頭像佔位"></div>
-          <div>
-            <div class="name">顏端廷</div>
-            <div class="muted small">Taiwan • Taipei • NTNU</div>
-          </div>
+        
+        <div class="bento-grid">
+            <div class="bento-item item-intro reveal bg-smoky-purple">
+                <span class="bento-tag">About Me</span>
+                <h3>數據與自動化的探索者</h3>
+                <p>
+                    目前就讀於國立台灣師範大學。我喜歡用 Python 與 C/C++ 建構工具，
+                    並著迷於將複雜的演算法概念轉化為解決問題的代碼。
+                    目標是成為能開發端到端解決方案的資料科學家。
+                </p>
+            </div>
+
+            <div class="bento-item item-edu reveal bg-grey-blue">
+                <span class="bento-tag">Education</span>
+                <h3>NTNU</h3>
+                <p>國立台灣師範大學</p>
+                <p class="sub-text">科技應用與人力資源發展學系<br>資訊工程學系</p>
+                <div class="year-badge">2024 — 2028</div>
+            </div>
+
+            <div class="bento-item item-goals reveal bg-matcha">
+                <span class="bento-tag">2025 Goals</span>
+                <h3>LeetCode Challenge</h3>
+                
+                <div class="stat-container">
+                    <div class="stat-box">
+                        <div class="stat-numbers">
+                            <span class="counter" data-target="79">0</span>
+                            <span class="stat-slash">/</span>
+                            <span class="stat-total">200</span>
+                        </div>
+                        <span class="stat-label">Easy</span>
+                    </div>
+
+                    <div class="stat-box">
+                        <div class="stat-numbers">
+                            <span class="counter" data-target="11">0</span>
+                            <span class="stat-slash">/</span>
+                            <span class="stat-total">100</span>
+                        </div>
+                        <span class="stat-label">Medium</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bento-item item-skills reveal bg-earthy">
+                <span class="bento-tag">Tech Stack</span>
+                <div class="tags-wrapper">
+                    <span class="tag">Python</span>
+                    <span class="tag">NumPy</span>
+                    <span class="tag">Pandas</span>
+                    <span class="tag">C</span>
+                    <span class="tag">C++</span>
+                    <span class="tag">MySQL</span>
+                    <span class="tag">Postgres</span>
+                    <span class="tag">Git</span>
+                    <span class="tag">Vibe Coding</span>
+                    <span class="tag">Prompt Engineering</span>
+                </div>
+            </div>
         </div>
-        <div class="kv-cards">
-          <div class="card small">
-            <div class="muted tiny">正在學習</div>
-            <div>資料結構 / 線性代數 /<br> 機率論 / 機器學習</div>
-          </div>
-          <div class="card small">
-            <div class="muted tiny">目標</div>
-            <div>In 2025<br>-> Leetcode easy : 200 <br>-> Leetcode med : 60</div>
-          </div>
+    </section>
+
+    <section id="projects" class="container section">
+        <div class="section-header reveal">
+            <h2 class="section-title">Project List</h2>
+            <div class="section-line"></div>
         </div>
-      </div>
-    </div>
-  </header>
 
-  <!-- 關於 -->
-  <section id="about" class="container reveal">
-    <div class="section-title"><h2>關於我</h2><div class="line"></div></div>
-    <div class="card">
-      <p>我是一名對資料科學、機器學習和軟體工程充滿熱忱的大學生。
-        目前主要用 Python、C/C++ 建構小工具，
-        最近完成了自動化新聞推送專案，整合爬蟲與 OpenAI API 生成每日摘要。
-        近期專注於練習資料結構與 LeetCode 題目，培養演算法思維。
-        我期望未來能投入資料科學或機器學習工程領域，開發結合數據與自動化的解決方案。
-      </p>
-      <p>開發技能：</p>
-      <div class="tag-row">
-        <span class="tag">Python</span>
-        <span class="tag">NumPy / pandas</span>
-        <span class="tag">C / C++</span>
-        <span class="tag">Git / GitHub</span>
-        <span class="tag">Vibe Coding</span>
-      </div>
-    </div>
-  </section>
+        <div class="bento-grid">
+            <div class="bento-item item-main-project reveal bg-navy text-light">
+                <div class="project-content">
+                    <span class="bento-tag" style="opacity: 0.9; color: #f0e68c;">Featured Project</span>
+                    <h3 style="color: #fff;">Online Markdown & LaTeX Editor</h3>
+                    <p style="color: rgba(255,255,255,0.85);">
+                        基於 React 與 Node.js 的雙模態即時預覽編輯器。
+                        支援 Markdown (KaTeX) 與 LaTeX (Tectonic) 雲端編譯。
+                        整合 Supabase 進行使用者驗證與文檔雲端同步。
+                    </p>
+                    <div class="project-meta" style="color: rgba(255,255,255,0.6);">
+                        <span>React</span> • <span>Node.js</span> • <span>Supabase</span> • <span>Docker</span>
+                    </div>
+                    <a href="https://github.com/potato-yen/online-editor" target="_blank" class="btn-link-light">View Code ↗</a>
+                </div>
+                <div class="project-visual-wrapper">
+                    <img src="assets/img/online-editor-preview.png" alt="Online Editor Preview" class="project-img">
+                </div>
+            </div>
 
-  <!-- 作品 -->
-  <section id="projects" class="container reveal">
-    <div class="section-title"><h2>精選作品</h2><div class="line"></div></div>
-    <div class="grid">
-      <article class="card project tilt">
-        <h3><a href="https://github.com/potato-yen/Daily-News-Email-Digest" target="_blank" rel="noopener">Daily News Email Digest</a></h3>
-        <p>藉由爬蟲進行每日新聞爬取，並串接OpenAI的API，對爬取內容進行摘要，形成一份可供快速預覽的文檔，並傳送至email</p>
-        <div class="meta">
-          <span class="chip">Python</span>
-          <span class="chip">Crawler</span>
-          <a class="chip" href="#" target="_blank" rel="noopener">API Key</a>
-          <a class="chip" href="#" target="_blank" rel="noopener">Auto</a>
+            <div class="bento-item item-web reveal bg-lavender">
+                <span class="bento-tag">Automation</span>
+                <h3>Daily News Digest</h3>
+                <p>Python 爬蟲與 OpenAI API 整合的自動化新聞摘要系統。每日自動抓取並寄送新聞懶人包。</p>
+                <a href="https://github.com/potato-yen/Daily-News-Email-Digest" target="_blank" class="link-arrow">View on GitHub ↗</a>
+            </div>
+
+            <div class="bento-item item-course reveal bg-cream">
+                <span class="bento-tag">Web Development</span>
+                <h3>Personal Portfolio</h3>
+                <p>
+                    使用原生 HTML/CSS/JS 與 Vibe Coding 打造的個人網站（即本站）。
+                    採用莫蘭迪色系與響應式 Bento Grid 設計。
+                </p>
+                <a href="https://github.com/potato-yen/web-repo" target="_blank" class="link-arrow">Source Code ↗</a>
+            </div>
         </div>
-      </article>
-      <article class="card project tilt">
-        <h3><a href="https://github.com/potato-yen/web-repo" target="_blank" rel="noopener">Self Web Page</a></h3>
-        <p>藉由Vibe Coding 做出由 HTML / JS / CSS 建構的個人網站</p>
-        <div class="meta">
-          <span class="chip">Vibe Coding</span>
-          <span class="chip">HTML</span>
-          <span class="chip">CSS</span>
-          <a class="chip" href="#" target="_blank" rel="noopener">JS</a>
+    </section>
+
+    <section id="resume" class="container section">
+        <div class="section-header reveal">
+            <h2 class="section-title">Experience</h2>
+            <div class="section-line"></div>
         </div>
-      </article>
-      <article class="card project tilt">
-        <h3>更多精選</h3>
-        <p>後續不定期更新......</p>
-        <div class="meta">
-          <span class="chip">_</span>
-          <span class="chip">_</span>
-          <span class="chip">_</span>
-          <a class="chip" href="#" target="_blank" rel="noopener">_</a>
+        
+        <div class="experience-list reveal">
+            <article class="exp-item">
+                <div class="exp-date">2025</div>
+                <div class="exp-content">
+                    <h4>Google Cloud Certificate</h4>
+                    <p>完成 Google 數位人才探索計畫 Google Cloud 學程並獲得認證。</p>
+                </div>
+            </article>
+            <article class="exp-item">
+                <div class="exp-date">2024</div>
+                <div class="exp-content">
+                    <h4>高中社團副社長</h4>
+                    <p>負責社團組織管理、活動協調，實現社團有序運作並提升團隊凝聚力。</p>
+                </div>
+            </article>
         </div>
-      </article>
-    </div>
-  </section>
+    </section>
 
-  <!-- 文章 -->
-  <section id="writing" class="container reveal">
-    <div class="section-title"><h2>最新文章</h2><div class="line"></div></div>
-    <div class="list">
-      <a class="card" href="https://github.com/potato-yen/Daily-News-Email-Digest" target="_blank" rel="noopener">
-        <span class="title">Finsh the project "Daily News Email Digest"</span>
-        <span class="date">2025-09-24</span>
-      </a>
-      <a class="card" href="https://leetcode.com/u/potatoyen/" target="_blank" rel="noopener">
-        <span class="title">Qonquer the first one Leetcode medium problem </span>
-        <span class="date">2025-09-23</span>
-      </a>
-      <a class="card" href="https://drive.google.com/file/d/1Osgrxvp08VkvKrZ5uKweVvIewFhFXxCL/view?usp=drivesdk" target="_blank" rel="noopener">
-        <span class="title">Gain the Certificate of Completion Google Cloud</span>
-        <span class="date">2025-08-28</span>
-      </a>
-    </div>
-  </section>
+    <section id="contact" class="container section">
+        <div class="contact-box reveal bg-navy text-light">
+            <h2 style="color: #fff;">Let's Connect</h2>
+            <p style="color: rgba(255,255,255,0.8);">歡迎交流資料科學、AI 技術或任何有趣的專案合作。</p>
+            <div class="contact-actions">
+                <a href="mailto:amethusyen@gmail.com" class="btn-primary-light">Send Email</a>
+                <div class="social-links-row">
+                    <a href="https://github.com/potato-yen" target="_blank" class="icon-link" title="GitHub">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/amethus-yen/" target="_blank" class="icon-link" title="LinkedIn">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- 履歷 -->
-  <section id="resume" class="container reveal">
-    <div class="section-title"><h2>履歷摘要</h2><div class="line"></div></div>
-    <div class="card">
-      <h3 class="h3">教育</h3>
-      <ul>
-        <li>國立台灣師範大學 — 科技應用與人力資源發展學系 / 資訊工程學系 (2024–2028)</li>
-      </ul>
-      <h3 class="h3">經驗</h3>
-      <ul>
-        <li>曾任高中社團副社長，並實現社團有序管理</li>
-        <li>獨立使用python完成自動化新聞推送專案</li>
-        <li>完成Google 數位人才探索計畫 Google Cloud學程並獲得認證</li>
-      </ul>
-      <h3 class="h3">技能</h3>
-      <ul>
-        <li>Python / C / C++ / MySQL / Git / Vibe Coding</li>
-        <li>團隊管理 / 組織溝通</li>
-      </ul>
-      <!-- <div class="cta-row">
-        <a class="btn" href="cv.pdf" target="_blank" rel="noopener">下載完整履歷（PDF）</a>
-      </div> -->
-    </div>
-  </section>
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 顏端廷 Amethus Yen. All rights reserved.</p>
+            <p class="footer-note">Design updated with Morandi Grey Palette.</p>
+        </div>
+    </footer>
 
-  <!-- 聯絡 -->
-  <section id="contact" class="container reveal">
-    <div class="section-title"><h2>聯絡</h2><div class="line"></div></div>
-    <div class="card contact-card">
-      <p>歡迎來信或私訊社群媒體。亦可使用以下嵌入式表單</p>
-      <div class="contact-links">
-        <a class="btn" id="copyEmail" href="mailto:yourname@mail.example" aria-label="寄信給我">amethusyen@gmail.com</a>
-        <a class="btn" href="https://www.linkedin.com/in/amethus-yen/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
-        <a class="btn" href="https://github.com/potato-yen" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
-      </div>
-      <!-- <form id="contactForm" action="https://formspree.io/f/xwprlwjv" method="POST" class="contact-form" aria-label="聯絡表單">
-        <input class="card input" type="text" name="name" placeholder="你的名字" required>
-        <input class="card input" type="email" name="email" placeholder="你的 Email" required>
-        <textarea class="card input" name="message" placeholder="想聊的主題..." required></textarea>
-        <button class="btn" type="submit">送出</button>
-        <div id="formMsg" class="form-msg muted small"></div>
-      </form>
-    </div> -->
-    <div class="form-wrapper">
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeu4MumZd_NdHXPCIpZaCmGfqqtdmlL4u5n8hhbfv4qdsuqvg/viewform?embedded=true" 
-            class="google-form"></iframe>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container footer-row">
-      <div>© <span id="year"></span> 顏端廷。保留所有權利。</div>
-      <div class="small muted">以原生 HTML/CSS/JS 製作 · 無框架 · 可離線瀏覽</div>
-    </div>
-  </footer>
-
-  <!-- 右下角回到頂部按鈕 -->
-  <button id="backToTop" class="back-to-top" aria-label="回到頂部" title="回到頂部">
-    <img src="assets/icons/arrow-up.svg" alt="" width="24" height="24" aria-hidden="true" />
-  </button>
+    <script src="assets/js/app.js"></script>
 </body>
 </html>
