@@ -18,3 +18,5 @@
 - Final Project : Online Editor
     - [Repository](https://github.com/potato-yen/online-editor)
     - [Render](https://online-editor-frontend-hvtl.onrender.com)
+    - [Demo video](https://youtu.be/9rqvSjljW4c?si=SNiv-QmZXoZmCnNQ)
+    - 組員：顏端廷 41371228h 楊立宇 41371216H 范子昊 41371229H
