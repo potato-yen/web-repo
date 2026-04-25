@@ -11,10 +11,10 @@
     - [Modified detail - AItest](https://github.com/potato-yen/web-repo/blob/main/my-app/app/(tabs)/AItest.tsx)
 - HW3 : Add api into self page
     - [Demo video](https://youtu.be/zK-klYpHZXQ)
-    - [Repository](https://github.com/potato-yen/web-repo2)
-- HW4 : API*3 & deploy
-    - [Render](https://web-repo2.onrender.com)
-    - [Vercel](https://portfolio-ashy-phi-f0nleqt0fw.vercel.app/)
+    - [Files](https://github.com/potato-yen/web-repo/tree/main/web-repo2)
+- HW4 : API*3 & deploy => suspended
+    - ~~[Render](https://web-repo2.onrender.com)~~
+    - ~~[Vercel](https://portfolio-ashy-phi-f0nleqt0fw.vercel.app/)~~
 - Final Project : Online Editor
     - [Repository](https://github.com/potato-yen/online-editor)
     - [Render](https://online-editor-frontend-hvtl.onrender.com)
